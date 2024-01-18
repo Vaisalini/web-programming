@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - Preview</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        section.dark-mode {
+            background-color: #555;
+        }
+    </style>
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.body;
+            const section = document.querySelector('section');
+
+            // Toggle dark mode
+            function toggleDarkMode() {
+                body.classList.toggle('dark-mode');
+                section.classList.toggle('dark-mode');
+            }
+
+            // Add event listener for dark mode toggle
+            document.addEventListener('keydown', function (event) {
+                // Check if the user presses the 'D' key
+                if (event.key === 'd' || event.key === 'D') {
+                    toggleDarkMode();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Resume Builder</h1>
+        <nav>
+            <ul>
+                <li><a href="resume.html">Home</a></li>
+                <li><a href="builder.html">Resume Builder</a></li>
+                <li><a href="preview.html">Preview</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Resume Preview</h2>
+        <p>Name: <span id="preview-name">John Doe</span></p>
+        <p>Email: <span id="preview-email">john.doe@example.com</span></p>
+        <p>Summary: <span id="preview-summary">Experienced professional with a background in...</span></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Resume Builder</p>
+    </footer>
+</body>
+</html>
